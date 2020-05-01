@@ -12,6 +12,7 @@
 #include "ContextMenus.h"
 #include "CustomStateProvider.h"
 #include "UriSource.h"
+#include "CopyHook.h"
 
 //===============================================================
 // ShellServices
@@ -48,6 +49,9 @@ void ShellServices::InitAndStartServiceTask()
 
         auto uriSource = winrt::make<ClassFactory<winrt::CloudMirror::implementation::UriSource>>();
         winrt::check_hresult(CoRegisterClassObject(CLSID_UriSource, uriSource.get(), CLSCTX_LOCAL_SERVER, REGCLS_MULTIPLEUSE, &cookie));
+
+        auto copyHookClassFactory = winrt::make<ClassFactory<TestCopyHookHandler>>();
+        winrt::check_hresult(CoRegisterClassObject(__uuidof(TestCopyHookHandler), copyHookClassFactory.get(), CLSCTX_LOCAL_SERVER, REGCLS_MULTIPLEUSE, &cookie));
 
         winrt::handle dummyEvent(CreateEvent(nullptr, FALSE, FALSE, nullptr));
         if (!dummyEvent)

@@ -72,6 +72,9 @@
     <ClInclude Include="FakeCloudProvider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CopyHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContextMenus.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="DirectoryWatcher.cpp">
       <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyHook.cpp">
+      <Filter>Source Files\ShellServiceProviders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
