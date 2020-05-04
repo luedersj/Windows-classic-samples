@@ -8,6 +8,7 @@
   xmlns:desktop3="http://schemas.microsoft.com/appx/manifest/desktop/windows10/3"
   xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
   xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  xmlns:rescap4="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/4"
   IgnorableNamespaces="uap mp rescap desktop3 desktop4">
 
   <Identity
@@ -74,6 +75,15 @@
       </Extensions>
     </Application>
   </Applications>
+
+  <Extensions>
+    <rescap4:Extension Category="windows.classicAppCompatKeys" EntryPoint="Windows.FullTrustApplication">
+      <rescap4:ClassicAppCompatKeys>
+        <rescap4:ClassicAppCompatKey Name="HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\CopyHooks"/>
+        <rescap4:ClassicAppCompatKey Name="HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\CopyHooks" ValueName="TestStorageProvider" ValueType="REG_SZ" Value="{e5f7e86b-6d9a-4a24-a6cf-e1856993f95b}"/>
+      </rescap4:ClassicAppCompatKeys>
+    </rescap4:Extension>
+  </Extensions>
 
   <Capabilities>
     <Capability Name="internetClient" />
