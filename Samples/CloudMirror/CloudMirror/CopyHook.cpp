@@ -10,5 +10,6 @@
 
 IFACEMETHODIMP TestCopyHookHandler::CopyCallback(HWND, UINT, UINT, PCWSTR sourceFile, DWORD, PCWSTR, DWORD, UINT* result)
 {
+    wprintf(L"Copy hook called for %s\n", sourceFile);
     return S_OK;
 }

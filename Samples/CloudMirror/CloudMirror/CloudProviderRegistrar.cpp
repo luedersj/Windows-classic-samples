@@ -65,6 +65,11 @@ void CloudProviderRegistrar::RegisterWithShell()
 
         winrt::StorageProviderSyncRootManager::Register(info);
 
+        const wchar_t copyHookClsid[] = L"{e5f7e86b-6d9a-4a24-a6cf-e1856993f95b}";
+        winrt::check_win32(SHSetValue(HKEY_LOCAL_MACHINE,
+            LR"(SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\CopyHooks)",
+            STORAGE_PROVIDER_ID, REG_SZ, copyHookClsid, sizeof(copyHookClsid)));
+
         // Give the cache some time to invalidate
         Sleep(1000);
     }

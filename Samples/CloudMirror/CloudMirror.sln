@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudMirror", "CloudMirror\CloudMirror.vcxproj", "{93C711E5-7D66-45DC-9658-4323CE0892B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E5980C89-5F0A-40C6-B1A3-9C08B6118504} = {E5980C89-5F0A-40C6-B1A3-9C08B6118504}
+	EndProjectSection
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "CloudMirrorPackage", "CloudMirrorPackage\CloudMirrorPackage.wapproj", "{1FAB5D02-237C-4B9C-B820-2EB7C3B6E63A}"
 EndProject

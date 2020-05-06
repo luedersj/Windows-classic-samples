@@ -70,21 +70,14 @@
             <com:ExeServer DisplayName="Cloud Mirror Uri Source" Executable="CloudMirror\CloudMirror.exe">
               <com:Class Id="97961bcb-601c-4950-927c-43b9319c7217" />
             </com:ExeServer>
+            <com:ExeServer DisplayName="Cloud Mirror Copy Hook" Executable="CloudMirror\CloudMirror.exe">
+              <com:Class Id="e5f7e86b-6d9a-4a24-a6cf-e1856993f95b" />
+            </com:ExeServer>
           </com:ComServer>
         </com:Extension>
       </Extensions>
     </Application>
   </Applications>
-
-  <Extensions>
-    <rescap4:Extension Category="windows.classicAppCompatKeys" EntryPoint="Windows.FullTrustApplication">
-      <rescap4:ClassicAppCompatKeys>
-        <rescap4:ClassicAppCompatKey Name="HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\CopyHooks"/>
-        <rescap4:ClassicAppCompatKey Name="HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\CopyHooks" ValueName="TestStorageProvider" ValueType="REG_SZ" Value="{e5f7e86b-6d9a-4a24-a6cf-e1856993f95b}"/>
-      </rescap4:ClassicAppCompatKeys>
-    </rescap4:Extension>
-  </Extensions>
-
   <Capabilities>
     <Capability Name="internetClient" />
     <rescap:Capability Name="runFullTrust" />
